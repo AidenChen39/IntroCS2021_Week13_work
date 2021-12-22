@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1">
+        <title>HW</title>
+        <link rel="stylesheet" type="text/css" href="css.css">
+    </head>
+    <body onkeydown="enter()">
+        <div class="main">
+            <h2>Guessing Game</h2>
+                <form method="post" action="#">
+                <p>
+                <label for = "number">Your Guess (1~100)</label></p>
+                <P>
+                <input type="text" id="number">
+                </p>
+                <P><input type="button" id="play" value="Play" onclick="check()" class="button"></P>   
+                </form>
+            <div id="result" >
+                <div class="color1">Result</div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+                var random = Math.floor(Math.random()*100+1);
+                var max = 100;
+                var min = 1;
+                var n = 1;
+                
+                function check(){
+                    var input = document.getElementById("number").value;
+                    if(input == random){
+                        alert("Boom!");
+                    }else if(input < random){
+                        min = input;
+                        n++;
+                        output();
+                        document.getElementById("number").value = " ";
+                    }else{
+                        max = input;
+                        n++;
+                        output();
+                        document.getElementById("number").value = " ";
+                    }
+                }
+
+                function output(){
+                    var newLine = document.createElement("div");
+                    var textNode = document.createTextNode(min + "-" + max);
+                    newLine.appendChild(textNode);
+                    if(n%2 == 1){
+                        newLine.setAttribute("class", "color1")
+                    }else{
+                        newLine.setAttribute("class", "color2")
+                    }
+                    document.getElementById("result").appendChild(newLine);    
+                }
+
+                function enter(){
+                    if(event.keyCode == 13){
+                        document.getElementById("play").click();
+                    }
+                }
+
+        </script>
+
+    </body>
+</html>

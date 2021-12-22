@@ -1,0 +1,36 @@
+body{
+    font-family: "arial";
+    
+}
+.main{
+    border: 2px solid gray;
+    width: 30%;
+	height: 50%;
+	margin: 0 auto;
+    background-color: #F4EFE8;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+.color1{
+    background-color: rgb(253, 173, 0);
+    border: 1px solid gray;
+}
+.color2{
+    background-color: rgb(255, 218, 138);
+    border: 1px solid gray;
+}
+.frame{
+    border: 1px solid gray;
+}
+.button{
+	background-color: #fff677; 
+	height: 15%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px solid black;
+}
+.button:hover{
+    background-color: #a39a1a; 
+}
